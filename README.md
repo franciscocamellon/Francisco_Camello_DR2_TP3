@@ -5,12 +5,12 @@
 #### 1. Usando Python, faça o que se pede:
 
 - [x] Crie uma lista vazia;
-- [ ] Adicione os elementos: 1, 2, 3, 4 e 5, usando append();
-- [ ] Imprima a lista;
-- [ ] Agora, remova os elementos 3 e 6``` (não esqueça de checar se eles estão na lista);
-- [ ] Imprima a lista modificada;
-- [ ] Imprima também o tamanho da lista usando a função len();
-- [ ] Altere o valor do último elemento para 6 e imprima a lista modificada.
+- [x] Adicione os elementos: 1, 2, 3, 4 e 5, usando append();
+- [x] Imprima a lista;
+- [x] Agora, remova os elementos 3 e 6``` (não esqueça de checar se eles estão na lista);
+- [x] Imprima a lista modificada;
+- [x] Imprima também o tamanho da lista usando a função len();
+- [x] Altere o valor do último elemento para 6 e imprima a lista modificada.
 
 > [Resolução](https://github.com/franciscocamellon/Francisco_Camello_DR2_TP3/blob/master/questao_01.py)
 
