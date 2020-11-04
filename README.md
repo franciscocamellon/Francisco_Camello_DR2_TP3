@@ -3,10 +3,7 @@
 
 
 #### 1. Usando Python, faça o que se pede (código e printscreen):
-
-
 - [x] Crie uma lista vazia;
-
 - [ ] Adicione os elementos: 1, 2, 3, 4 e 5,  usando append();
 - [ ] Imprima a lista;
 - [ ] Agora, remova os elementos 3 e 6 (não esqueça de checar se eles estão na lista);
