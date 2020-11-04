@@ -1,76 +1,47 @@
-# Francisco_Camello_DR2_TP1
-Teste de Performance 01 - Fundamentos do Desenvolvimento Python
-
-1. Escreva uma função em Python que some todos os números ímpares de 1 até um dado N, inclusive. O número N deve ser obtido do usuário. Ao final, escreva o valor do resultado desta soma.
-
-2. Faça uma função em Python que receba do usuário a idade de uma pessoa em anos, meses e dias e retorne essa idade expressa em dias. Considere que todos os anos têm 365 dias.
-
-3. Escreva uma função em Python que calcule o fatorial de um dado número N usando um for. O fatorial de N=0 é um. O fatorial de N é (para N > 0): N x (N-1) x (N-2) x … x 3 x 2 x 1. Por exemplo, para N=5 o fatorial é: 5 x 4 x 3 x 2 x 1 = 120. Se N for negativo, exiba uma mensagem indicando que não é possível calcular seu fatorial.
-
-4. Escreva um programa em Python que calcule o fatorial de um dado número N usando um while. Use as mesmas especificações do item anterior.
-
-5. Trabalhar com tuplas é muito importante! Crie 4 funções nas quais:
-
-Dada uma tupla e um elemento, verifique se o elemento existe na tupla e retorne o indice do mesmo
-Dada uma tupla, retorne 2 tuplas onde cada uma representa uma metade da tupla original.
-Dada uma tupla e um elemento, elimine esse elemento da tupla.
-Dada uma tupla, retorne uma nova tupla com todos os elementos invertidos.
-6. (Desafío) Utilizando a ferramenta turtle, desenhe os ângulos de um círculo como indicado na figura a seguir:
-
-Utilize as funções da ferramenta turtle setheading e write, além de outras que sejam necessárias.
-
-7. Utilizando a ferramenta turtle, desenhe uma série de quadrados um do lado do outro como indicada na figura a seguir:
-
-8. Escreva um programa em Python que receba três valores reais X, Y e Z, guarde esses valores numa tupla e verifique se esses valores podem ser os comprimentos dos lados de um triângulo e, neste caso, retorne qual o tipo de triângulo formado.
-
-Para que X, Y e Z formem um triângulo é necessário que a seguinte propriedade seja satisfeita: o comprimento de cada lado de um triângulo deve ser menor do que a soma do comprimento dos outros dois lados. Além disso, o programa deve identificar o tipo de triângulo formado observando as seguintes definições:
-
-Triângulo Equilátero: os comprimentos dos três lados são iguais.
-Triângulo Isósceles: os comprimentos de dois lados são iguais.
-Triângulo Escaleno: os comprimentos dos três lados são diferentes.
- 9. Faça uma função que desenhe o triângulo obtido na questão 7 com a ferramenta turtle.
-
-10. Faça uma função no Python que, utilizando a ferramenta turtle, desenhe um quadrado de lado N.
-
-11. Faça uma função no Python que, utilizando a ferramenta turtle, desenhe um triângulo de lado N.
-
-12. Faça uma função no Python que, utilizando a ferramenta turtle, desenhe um círculo de raio N.
-
-13. Usando a função obtida na questão 10, desenhe n quadrados um dentro de outro como mostrado na figura:
+# Francisco_Camello_DR2_TP3
+## Teste de Performance 03 - Fundamentos do Desenvolvimento Python
 
 
-Utilize as funções turtle.penup() e turtle.pendown() para mexer a tartaruga sem desenhar
+ ### 1. Usando Python, faça o que se pede (código e printscreen):
 
-14. Utilizando o código 10.1 da Etapa 2, onde utilizando a função onkey do turtle associamos valores às setas do teclado, para este exercício associe as funções obtidas nas questões 10, 11 e 12 às teclas ‘q’, ‘t’ e ‘c’ respectivamente.
+    * Crie uma lista vazia;
+    * Adicione os elementos: 1, 2, 3, 4 e 5,  usando append();
+    * Imprima a lista;
+    * Agora, remova os elementos 3 e 6 (não esqueça de checar se eles estão na lista);
+    * Imprima a lista modificada;
+    * Imprima também o tamanho da lista usando a função len();
+    * Altere o valor do último elemento para 6 e imprima a lista modificada.
 
-Código 10.1:
+ ### 2. Escreva um programa em Python que leia um vetor de 5 números inteiros e mostre-os. (código)
+ ### 3. Escreva um programa em Python que leia um vetor de 10 palavras e mostre-as na ordem inversa de leitura. (código)
+ ### 4. Escreva um programa em Python que leia um vetor de números de tamanho t. Leia t previamente. Em seguida, faça seu programa verificar quantos números iguais a 0 existem nele. (código)
+ ### 5. Escreva um programa em Python que leia nomes de alunos e suas alturas em metros até que um nome de aluno seja o código de saída “Sair”. O programa deve possuir uma função que indica todos os alunos que tenham altura acima da média (a média aritmética das alturas de todos os alunos lidos). (código)
+  ### 6. Escreva um programa em Python que leia diversas frases até a palavra “Sair” ser digitada. Indique quais frases apresentam a palavra “eu”. (código)
+ ### 7. Escreva um programa em Python que realiza operações de inclusão e remoção em listas. Seu programa deve perguntar ao usuário qual operação deseja fazer: (código)
+    - a. Mostrar lista;
+    - b. Incluir elemento;
+    - c. Remover elemento;
+    - d. Apagar todos os elementos da lista.
+>Se a opção for a alternativa (a), seu programa deve apenas mostrar o conteúdo da lista. Se a opção for a alternativa (b), seu programa deve pedir o valor do elemento a ser incluído. Se a opção for a alternativa (c), seu programa deve pedir o valor do elemento a ser removido. E se a opção for a alternativa (d), deve-se apenas exibir se a operação foi concluída.
 
-15. Rode o código a seguir e explique com suas palavras o que acontece nele.
+ ### 8. Faça uma funçãoum programa em Python que simula um lançamento de dados. Lance o dado 100 vezes e armazene os resultados em um vetor. Depois, mostre quantas vezes cada valor foi conseguido. Dica: use um vetor de contadores (1-6) e uma função do módulo 'random' de Python para gerar números aleatórios, simulando os lançamentos dos dados. (código)
 
-Código 11:
+ ### 9. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um círculo azul de 100 px de diâmetro no centro da tela. (código e printscreen)
+ ### 10. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um quadrado vermelho de 100 px de lado no centro da tela. O quadrado deve ser capaz de se movimentar vertical e horizontalmente através de teclas do computador. Pode ser ‘a’,’s’,’d’,’w’ ou as setas do teclado. (código e printscreen)
+ ### 11. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um círculo azul de 100 px de diâmetro no centro da tela que se move da esquerda para a direita. Sempre que chegar na extremidade direita, o círculo deve voltar à extremidade esquerda, retomando o movimento da esquerda para a direita. (código e printscreen)
+ ### 12. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um círculo amarelo de 100 px de diâmetro no centro da tela que se move sempre em velocidade permanente na direção que o usuário indicar através das teclas. Similar ao item anterior, sempre que chegar em uma extremidade, o círculo deve voltar à extremidade oposta e continuar o com a última direção que o usuário indicou. (código e printscreen)
+ ### 13. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um círculo verde de 100 px de diâmetro no centro da tela que se inicie o movimento da esquerda para a direita. Sempre que chegar em alguma extremidade, o círculo deve trocar a direção e aumentar a velocidade em  ### 1. (código e printscreen)
+ ### 14. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um quadrado de tamanho 50 no centro da tela. Quando o usuário clicar em alguma área da janela, o quadrado deve se mover para a posição clicada. (código e printscreen)
+ ### 15. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha na tela um estrela de 5 pontas no tamanho que preferir. (código e printscreen)
+ ### 16. Usando a biblioteca Pygame, escreva um programa que desenha na tela estrelas de 5 pontas de tamanhos aleatórios a cada vez que o usuário clicar na tela. A ponta superior da estrela deve estar situada onde o usuário clicou. (código e printscreen)
+ ### 17. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” (visto no curso), com uma modificação. Tal modificação consiste em incluir o aumento da velocidade da bola. O aumento será feito de maneira gradual, isto é, cada 10 vezes que a bola bater na paleta do jogador1 a velocidade aumenta em  ### 1. (código e printscreen)
+ ### 18. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em aumentar o ganho de pontos para cada vez que a bola encostar na paleta do jogador ### 1. O aumento da pontuação será também realizada de maneira gradual, porém somente a cada 2 aumentos da velocidade da bola, isto é 1 ponto será atribuído ao total de pontos que o jogador ganha a cada vez que a bola bate na paleta. (código e printscreen)
+ ### 19. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em inserir um som quando a bola bate nas paletas dos jogadores. (código)
+ ### 20. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em inserir um som (vitória) quando a bola bate na borda atrás da paleta do computador. (código)
+ ### 21. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em inserir um som (derrota) quando a bola bate na borda atrás da paleta do jogador ### 1. (código)
+ ### 22. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em inserir um som a cada 10 pontos feitos pelo jogador. (código)
+ ### 23. (Desafio) Usando a biblioteca Pygame, escreva um programa que implemente o jogo da velha para dois jogadores (ambos usuários). (código e printscreen)
 
-16. Altere o código da questão 15 para adicionar em outra região um novo polígono à sua escolha.
-
- 17. Escreva uma função que receba uma string e um número inteiro x e rotacione a string x posições para a esquerda. Assuma que a string tem pelo menos x caracteres.
-
-Isto é, utilizando como entradas a string “aeiou” e o inteiro 3, o resultado da sua função deve ser “ouaei”.
-
-18. (desafio) Em jogos antigos era possível ver que os desenhos eram compostos por vários triângulos. Como uma maneira de treinar isso, a partir do N dado pelo usuário desenhe um polígono de lado N composto somente por triângulos como na figura:
-
-19. Dado um valor N do usuário, desenhe com a ferramenta turtle a seguinte imagem:
-
-Para ela, a tartaruga aumenta o passo andado em um e gira 90 graus após cada movimentação.
-
-20. Baseando no código criado na questão anterior, crie uma função na qual dado um N obtido através do usuário, sua tartaruga gire 90 + N graus. Teste para 1, 4 e 10 para obter as figuras a seguir.
-
-Teste quais outras figuras você pode gerar com o mesmo código, apenas alterando o ângulo.
-
-
-
-1
-2
-3
-4
-5
-8
-17
+ #### 24. (Desafio) Usando a biblioteca Pygame, escreva um programa que implemente o jogo da memória para um jogador. (código e printscreen)
+>O jogo da memória é um clássico jogo formado por peças que apresentam uma figura ou cor em um dos lados. Cada figura/cor se repete em duas peças diferentes. Para começar o jogo, as peças são postas com as figuras/cores voltadas para baixo, para que não possam ser vistas. Cada jogada do jogador consiste em virar duas peças, clicando nelas. Caso as figuras/cores sejam iguais, as peças permanecem viradas. Se forem peças diferentes, estas devem ser viradas novamente. O jogo termina quando todas as peças forem viradas. A pontuação do jogador corresponde a todas as suas jogadas. Quanto menor o número de jogadas, melhor a sua pontuação.
+As peças podem ser quadrados posicionadas em forma de matriz. Por exemplo, se forem 16 peças, elas podem ser posicionadas na resolução 4x4 ou 2x8 ou como preferir.
