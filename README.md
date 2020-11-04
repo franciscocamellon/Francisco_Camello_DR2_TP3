@@ -5,7 +5,7 @@
  ### 1. Usando Python, faça o que se pede (código e printscreen):
 
 
-- [ ] Crie uma lista vazia;
+- [ x ] Crie uma lista vazia;
 
 - [ ] Adicione os elementos: 1, 2, 3, 4 e 5,  usando append();
 - [ ] Imprima a lista;
@@ -36,7 +36,7 @@
  ### 13. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um círculo verde de 100 px de diâmetro no centro da tela que se inicie o movimento da esquerda para a direita. Sempre que chegar em alguma extremidade, o círculo deve trocar a direção e aumentar a velocidade em  ### 1. (código e printscreen)
  ### 14. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha um quadrado de tamanho 50 no centro da tela. Quando o usuário clicar em alguma área da janela, o quadrado deve se mover para a posição clicada. (código e printscreen)
  ### 15. Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha na tela um estrela de 5 pontas no tamanho que preferir. (código e printscreen)
- ### 16. Usando a biblioteca Pygame, escreva um programa que desenha na tela estrelas de 5 pontas de tamanhos aleatórios a cada vez que o usuário clicar na tela. A ponta superior da estrela deve estar situada onde o usuário clicou. (código e printscreen) 
+ ### 16. Usando a biblioteca Pygame, escreva um programa que desenha na tela estrelas de 5 pontas de tamanhos aleatórios a cada vez que o usuário clicar na tela. A ponta superior da estrela deve estar situada onde o usuário clicou. (código e printscreen)
  ### 17. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” (visto no curso), com uma modificação. Tal modificação consiste em incluir o aumento da velocidade da bola. O aumento será feito de maneira gradual, isto é, cada 10 vezes que a bola bater na paleta do jogador1 a velocidade aumenta em  ### 1. (código e printscreen)
  ### 18. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em aumentar o ganho de pontos para cada vez que a bola encostar na paleta do jogador ### 1. O aumento da pontuação será também realizada de maneira gradual, porém somente a cada 2 aumentos da velocidade da bola, isto é 1 ponto será atribuído ao total de pontos que o jogador ganha a cada vez que a bola bate na paleta. (código e printscreen)
  ### 19. Usando a biblioteca Pygame, escreva um programa que implemente o jogo “Pong” alterado na questão anterior e que adicione uma nova modificação. Tal modificação consiste em inserir um som quando a bola bate nas paletas dos jogadores. (código)
