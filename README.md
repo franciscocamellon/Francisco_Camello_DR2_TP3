@@ -35,7 +35,9 @@
 - [ ]  b. Incluir elemento;
 - [ ]  c. Remover elemento;
 - [ ]  d. Apagar todos os elementos da lista.
-    >Se a opção for a alternativa (a), seu programa deve apenas mostrar o conteúdo da lista. Se a opção for a alternativa (b), seu programa deve pedir o valor do elemento a ser incluído. Se a opção for a alternativa (c), seu programa deve pedir o valor do elemento a ser removido. E se a opção for a alternativa (d), deve-se apenas exibir se a operação foi concluída.
+
+
+>Se a opção for a alternativa (a), seu programa deve apenas mostrar o conteúdo da lista. Se a opção for a alternativa (b), seu programa deve pedir o valor do elemento a ser incluído. Se a opção for a alternativa (c), seu programa deve pedir o valor do elemento a ser removido. E se a opção for a alternativa (d), deve-se apenas exibir se a operação foi concluída.
 
 
 #### 8. Faça uma funçãoum programa em Python que simula um lançamento de dados. Lance o dado 100 vezes e armazene os resultados em um vetor. Depois, mostre quantas vezes cada valor foi conseguido. Dica: use um vetor de contadores (1-6) e uma função do módulo 'random' de Python para gerar números aleatórios, simulando os lançamentos dos dados. (código)
