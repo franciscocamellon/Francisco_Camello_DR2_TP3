@@ -16,6 +16,7 @@ class Questao_01():
 
     def __init__(self):
         """ Constructor. """
+        self.my_list = []
 
 
     def init_class(self):
@@ -25,6 +26,16 @@ class Questao_01():
 
     def process_data(self):
         """ This function process the input data from init_class. """
+
+        for i in range(1, 6):
+            self.my_list.append(i)
+
+        print(self.my_list)
+
+        for i in self.my_list:
+            Validate.validate_value_tuple()
+
+
 
 
 
