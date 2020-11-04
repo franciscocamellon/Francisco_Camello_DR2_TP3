@@ -4,13 +4,15 @@
 
  ### 1. Usando Python, faça o que se pede (código e printscreen):
 
-    * Crie uma lista vazia;
-    * Adicione os elementos: 1, 2, 3, 4 e 5,  usando append();
-    * Imprima a lista;
-    * Agora, remova os elementos 3 e 6 (não esqueça de checar se eles estão na lista);
-    * Imprima a lista modificada;
-    * Imprima também o tamanho da lista usando a função len();
-    * Altere o valor do último elemento para 6 e imprima a lista modificada.
+
+-[] Crie uma lista vazia;
+* Adicione os elementos: 1, 2, 3, 4 e 5,  usando append();
+* Imprima a lista;
+* Agora, remova os elementos 3 e 6 (não esqueça de checar se eles estão na lista);
+* Imprima a lista modificada;
+* Imprima também o tamanho da lista usando a função len();
+* Altere o valor do último elemento para 6 e imprima a lista modificada.
+
 
  ### 2. Escreva um programa em Python que leia um vetor de 5 números inteiros e mostre-os. (código)
  ### 3. Escreva um programa em Python que leia um vetor de 10 palavras e mostre-as na ordem inversa de leitura. (código)
