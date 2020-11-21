@@ -21,7 +21,7 @@ class Zero(Custom_Error):
 
 
 class Equal_Length(Custom_Error):
-    """ Raised when the input value is not an integer. """
+    """ Raised when the input value is not an value. """
     pass
 
 
@@ -47,30 +47,14 @@ class Not_Found(Custom_Error):
 
 class Validate(Custom_Error):
 
-    def validate_factorial(self, title):
-        """ Validates the input data given by the user. """
-
-        while True:
-            try:
-                value = int(input(title))
-                if value < 0:
-                    raise Less_Than_Zero
-                else:
-                    return value
-                break
-            except ValueError:
-                print('{}Erro! Digite um número inteiro positivo!'.format(' '*3))
-            except Less_Than_Zero:
-                print('{}Erro! Não é possível calcular fatorial de números negativos!'.format(' '*3))
-
-    def validate_value_tuple(self, title, _tuple):
+    def validate_value_tuple(self, title, _list):
         """ Validates the input data given by the user. """
 
         while True:
             try:
                 value = input(title)
-                for i in range(len(_tuple)):
-                    if re.search(value, _tuple[i], re.IGNORECASE):
+                for i in range(len(_list)):
+                    if re.search(value, _list[i], re.IGNORECASE):
                         return value
                 else:
                     raise Not_Found
@@ -106,42 +90,53 @@ class Validate(Custom_Error):
         while True:
             try:
                 value = str(input(title))
-                if len(value) == length:
-                    raise Equal_Length
-                elif len(value) < length:
+                if len(value) < length:
                     raise String
                 else:
                     return value
                 break
             except ValueError:
-                print('{}Erro! Digite uma string!'.format(' '*3))
+                print('{}Erro! Digite uma palavra!'.format(' '*3))
             except String:
-                print('{}Erro! String tem menos de {} caracteres!'.format(length, ' '*3))
-            except Equal_Length:
-                print(
-                    '{}Aviso! Tamanho da string igual ao número, nenhuma mudança será percebida!', sep="\n".format(' '*3))
+                print('{1}Erro! String tem menos de {0} caracteres!'.format(
+                    length, ' '*3))
 
-    def validate_age(self, title, years=False, months=False, days=False):
+    def validate_numbers(self, title, zero=True):
         """ Validates the input data given by the user. """
 
         while True:
             try:
-                if months:
-                    _months = self.validate_values(title, True)
-                    if _months > 12:
-                        raise Months
+                value = input(title)
+                if str(value[0]) == '-' and str(value[1:]).isnumeric() \
+                        or value.isnumeric():
+                    new = int(value)
+                    if isinstance(new, int):
+                        return new
                     else:
-                        return _months
-                elif days:
-                    _days = self.validate_values(title, True)
-                    if _days > 30:
-                        raise Days
+                        raise String
+                elif str(value[0]) == '-' and \
+                    str(value[1:]).replace('.', '', 1).isdigit() or \
+                        value.replace('.', '', 1).isdigit():
+                    new = float(value)
+                    if isinstance(new, float):
+                        return new
                     else:
-                        return _days
-                break
+                        raise String
+                elif str(value[0]) == '-' and \
+                        str(value[1:]).replace(',', '.', 1).replace('.', '', 1).isdigit()\
+                        or value.replace(',', '.', 1).replace('.', '', 1).isdigit():
+                    new = float(value.replace(
+                        ',', '.', 1))
+                    if isinstance(new, float):
+                        return new
+                    else:
+                        raise String
+                elif value.isalpha():
+                    raise String
+                else:
+                    raise ValueError
+
             except ValueError:
-                print('{}Erro! Digite um número inteiro!'.format(' '*3))
-            except Months:
-                print('{}Erro! Aquantidade de meses não pode ser maior que 12!'.format(' '*3))
-            except Days:
-                print('{}Erro! Aquantidade de dias não pode ser maior que 30!'.format(' '*3))
+                print('{}Erro! Digite um número!'.format(' '*3))
+            except String:
+                print('{}Erro! Digite um número!'.format(' '*3))
