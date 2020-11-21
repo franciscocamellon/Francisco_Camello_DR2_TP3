@@ -43,7 +43,7 @@ class Questao_09():
                     self.finish = True
 
             self.draw_circle(
-                self.SCREEN, self.BLUE, (self.SCREEN_WIDTH // 2, self.SCREEN_HEIGHT // 2), 100)
+                self.SCREEN, self.BLUE, (self.SCREEN_WIDTH // 2, self.SCREEN_HEIGHT // 2), 50)
 
             # Atualiza o desenho na tela
             pygame.display.update()

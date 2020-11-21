@@ -12,13 +12,13 @@ import pygame
 
 
 class Questao_10():
-    """ Docstring """
+    """ This function draws a rectangle capable of moving yourself on the
+    vertical and horizontal axis. """
 
     def __init__(self):
         """ Constructor. """
         pygame.init()
         self.DISPLAY_NAME = pygame.display.set_caption('Questão 10')
-        self.KEY = pygame.key.get_pressed()
         self.SCREEN_WIDTH = 400
         self.SCREEN_HEIGHT = 400
         self.SCREEN = pygame.display.set_mode(
@@ -33,39 +33,41 @@ class Questao_10():
 
     def move_keys(self, rect):
         """ This functions moves a rectangle in place"""
-        if self.KEY[pygame.K_LEFT]:
+
+        key = pygame.key.get_pressed()
+
+        if key[pygame.K_LEFT]:
             rect.move_ip(-10, 0)
-        if self.KEY[pygame.K_RIGHT]:
+        if key[pygame.K_RIGHT]:
             rect.move_ip(10, 0)
-        if self.KEY[pygame.K_UP]:
+        if key[pygame.K_UP]:
             rect.move_ip(0, -10)
-        if self.KEY[pygame.K_DOWN]:
+        if key[pygame.K_DOWN]:
             rect.move_ip(0, 10)
 
     def draw_rectangle(self, surface, color, rect):
         """ This functions draws a rectangle """
+
         pygame.draw.rect(surface, color, rect)
 
     def init_game(self):
-        """ Docstring """
+        """ This function starts the game. """
 
         while not self.finish:
-            # Checar os eventos do mouse aqui:
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.finish = True
 
             self.SCREEN.fill(self.BLACK)
 
-            self.draw_rectangle(
-                self.SCREEN, self.RED, self.RECT)
+            self.draw_rectangle(self.SCREEN, self.RED, self.RECT)
             self.move_keys(self.RECT)
-            # Atualiza o desenho na tela
+
             pygame.display.update()
 
-            # 60 frames por segundo
             self.FPSCLOCK.tick(self.FPS)
-        # Finaliza a janela
+
         pygame.display.quit()
 
 
