@@ -17,15 +17,22 @@ class Questao_05():
 
     def __init__(self):
         """ Constructor. """
+        self.input = {"Digite o nome do aluno: ":[],
+        "Digite a altura do aluno: ":[]}
 
 
     def init_class(self):
         """ This function receives the input data from users. """
+        while "sair" not in self.input["Digite o nome do aluno: "]:
+            for k, v in self.input.items():
+                self.input["Digite o nome do aluno: "].append(input(k))
+                self.input["Digite a altura do aluno: "].append(input(k))
 
 
 
     def process_data(self):
         """ This function process the input data from init_class. """
+        self.init_class()
 
 
 
@@ -34,7 +41,7 @@ class Questao_05():
 
         print('===' * 25, 'Questão 05'.center(75), '===' * 25, sep='\n')
         self.process_data()
-        print('---' *25, '{}','---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n")
+        print('---' *25, '{}'.format(self.input),'---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n")
 
 
 Questao_05().print_result()
