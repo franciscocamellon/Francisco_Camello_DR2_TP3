@@ -12,10 +12,10 @@ import pygame
 import sys
 from pygame.locals import *
 
-from components import Tenis_Court as court
-from components import Pong_Player as player
-from components import Pong_Ball as ball
-from components import Movements as mov
+from components import Tennis_Court as court
+from components import Collisions
+from components import Paddle
+from components import Ball
 
 
 class Questao_19():
@@ -24,7 +24,7 @@ class Questao_19():
     def __init__(self):
         """ Constructor """
         pygame.init()
-        pygame.display.set_caption('Questão 19')
+        pygame.display.set_caption('Questão 17')
         self.FONTSIZE = 20
         self.FONT = pygame.font.Font('freesansbold.ttf', self.FONTSIZE)
         self.SCREEN_WIDTH = 500
@@ -33,22 +33,30 @@ class Questao_19():
             (self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
         self.FPS = 200
         self.FPSCLOCK = pygame.time.Clock()
+        self.SERVE_SOUND = pygame.mixer.Sound("src/audio/tennisserve.wav")
         self.finish = False
-        self.ball_x_dir = -1
-        self.ball_y_dir = -1
-        self.score_player_one = 0
-        self.score_player_two = 0
+        self.score_one = 0
+        self.score_two = 0
 
     def init_game(self):
-        """ This function starts the game. """
+        """ This function starts the game """
 
-        player_one_pos = player().player_position()
-        player_two_pos = player().player_position()
+        # creates the players
+        player_one = Paddle((255, 255, 255), 65, 175)
+        player_two = Paddle((255, 255, 255), 430, 175)
 
-        player_one = pygame.Rect(70, player_one_pos, 5, 50)
-        player_two = pygame.Rect((430), player_two_pos, 5, 50)
+        # creates the ball
+        ball = Ball((255, 255, 255), 5, 5)
 
-        _ball = pygame.Rect(245, 195, 5, 5)
+        # this will be a list of sprites
+        all_sprites_list = pygame.sprite.Group()
+
+        # Add the paddles to the list of sprites
+        all_sprites_list.add(player_one)
+        all_sprites_list.add(player_two)
+        all_sprites_list.add(ball)
+
+        court().create_court(self.SCREEN)
 
         while True:
             self.SCREEN.fill((0, 0, 0))
@@ -59,56 +67,50 @@ class Questao_19():
                     sys.exit()
                 elif event.type == MOUSEMOTION:
                     mouseX, mouseY = event.pos
-                    player_one.y = mouseY
+                    player_one.rect.y = mouseY
                     pygame.mouse.set_visible(1)
+
+            all_sprites_list.update()
 
             # creates the court
             court().create_court(self.SCREEN)
 
-            # creates the players
-            player().create_player(self.SCREEN, self.SCREEN_HEIGHT, player_one)
-            player().create_player(self.SCREEN, self.SCREEN_HEIGHT, player_two)
+            # detect collisions between ball and the walls
+            Collisions().wall_collision(ball)
 
-            # creates the ball
-            ball().create_ball(self.SCREEN, _ball)
-
-            # inits the ball movements
-            _ball = mov().ball_movement(_ball, self.ball_x_dir,
-                                        self.ball_y_dir, self.score_player_one)
-
-            # verifies the collision existence
-            self.ball_x_dir, self.ball_y_dir = mov().verify_collision(_ball,
-                                                                      self.ball_x_dir,
-                                                                      self.ball_y_dir)
-
-            # verifies the ball collision
-            new_dir = mov().ball_collision(_ball, player_one, player_two, self.ball_x_dir)
-
-            # changes the direction accordingly with the direction's state
-            if new_dir == 1:
-                self.ball_x_dir *= new_dir
-            elif new_dir == -1:
-                self.ball_x_dir *= new_dir
-            else:
-                self.ball_x_dir = self.ball_x_dir
+            # detect collisions between the ball and the players
+            if pygame.sprite.collide_mask(ball, player_one):
+                self.SERVE_SOUND.play()
+                ball.bounce()
+                self.score_one += 1
+            elif pygame.sprite.collide_mask(ball, player_two):
+                self.SERVE_SOUND.play()
+                ball.bounce()
+                self.score_two += 1
 
             # computer movements
-            player_two = mov().computer_movements(_ball, self.ball_x_dir, player_two)
-            player_one = mov().computer_movements2(_ball, self.ball_x_dir, player_one)
+            player_two = Collisions().computer_movements(ball, player_two)
 
             # scores points for player one
-            self.score_player_one = mov().compute_score(
-                player_one, _ball, self.score_player_one, self.ball_x_dir, True)
+            self.score_one = Collisions().compute_score(
+                player_one, ball, self.score_one, True)
 
-            # scores points for player two
-            self.score_player_two = mov().compute_score(
-                player_two, _ball, self.score_player_two, self.ball_x_dir, player_two=True)
+            # if self.score_one > 1 and self.score_one % 10 == 0:
+            #     ball.velocity[0] += 1
+
+            # # scores points for player two
+            self.score_two = Collisions().compute_score(
+                player_two, ball, self.score_two, player_two=True)
 
             # shows the score for both players
-            player().create_score(self.SCREEN, 'You', self.score_player_one, self.FONT, (100, 15))
-            player().create_score(self.SCREEN, 'PC', self.score_player_two, self.FONT, (300, 15))
+            Collisions().create_score(self.SCREEN, 'You', self.score_one, self.FONT, (100, 15))
+            Collisions().create_score(self.SCREEN, 'PC', self.score_two, self.FONT, (300, 15))
 
-            pygame.display.update()
+            # now let's draw all the sprites in one go
+            all_sprites_list.draw(self.SCREEN)
+
+            # pygame.display.update()
+            pygame.display.flip()
 
             self.FPSCLOCK.tick(self.FPS)
 
